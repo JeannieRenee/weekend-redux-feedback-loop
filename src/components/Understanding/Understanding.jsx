@@ -2,7 +2,7 @@
 
 function Understanding(){
     return (
-        <h1>Understanding</h1>
+        <h2> How well are you understanding the content?</h2>
     )
 }
 

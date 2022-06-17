@@ -2,7 +2,7 @@
 
 function Support(){
     return (
-        <h1>Support</h1>
+        <h2>How well are you being supported?</h2>
     )
 }
 

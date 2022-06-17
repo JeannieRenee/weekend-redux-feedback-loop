@@ -2,7 +2,7 @@
 
 function Comments(){
     return (
-        <h1>Comments</h1>
+        <h2>Any comments you want to leave?</h2>
     )
 }
 

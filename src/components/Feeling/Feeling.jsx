@@ -2,7 +2,7 @@
 
 function Feeling(){
     return (
-        <h1>Feeling</h1>
+        <h2>How are you feeling today?</h2>
     )
 }
 
