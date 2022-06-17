@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 function Feeling(){
     return (
@@ -10,7 +10,7 @@ function Feeling(){
                 min="0"
                 max="10"
             /> 
-            <button>NEXT</button>
+            <Link to='/Understanding'>NEXT</Link>
         </>  
     )
 }

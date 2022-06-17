@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 
 function Comments(){
@@ -9,7 +10,7 @@ function Comments(){
                 type="text" 
                 placeholder="feeling?"
             /> 
-            <button>NEXT</button>
+            <Link to='/Review'>NEXT</Link>
         </>
     )
 }

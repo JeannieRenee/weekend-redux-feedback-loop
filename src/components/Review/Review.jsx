@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 function Review(){
     return (
@@ -9,7 +9,7 @@ function Review(){
             <p>Support: </p>
             <p>Comments: </p>
 
-            <button>SUBMIT</button>
+            <Link to='/Thanks'>SUBMIT</Link>
         </>
     )
 }

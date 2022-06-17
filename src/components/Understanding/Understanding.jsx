@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 
 function Understanding(){
@@ -10,7 +11,7 @@ function Understanding(){
             min="0"
             max="10"
         /> 
-        <button>NEXT</button>
+        <Link to='/Support'>NEXT</Link>
     </>
     )
 }

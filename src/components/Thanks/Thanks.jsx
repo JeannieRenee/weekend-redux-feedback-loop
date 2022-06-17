@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 
 function Thanks(){
@@ -5,7 +6,10 @@ function Thanks(){
         <>
             <h2>Thanks for your feedback!</h2>
 
-            <button>LEAVE NEW FEEDBACK</button>
+            <Link to='/feeling'>LEAVE NEW FEEDBACK</Link>
+            <br/>
+            <Link to='/'>Exit to Home</Link>
+
         </>
     )
 }

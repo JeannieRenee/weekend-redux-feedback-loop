@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 
 function Support(){
     return (
@@ -10,7 +10,7 @@ function Support(){
             min="0"
             max="10"
         /> 
-        <button>NEXT</button>
+        <Link to='/Comments'>NEXT</Link>
     </>
     )
 }
