@@ -6,6 +6,9 @@ import Comments from '../Comments/Comments';
 import Feeling from '../Feeling/Feeling';
 import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
+import Review from '../Review/Review';
+import Admin from '../Admin/Admin';
+import Thanks from '../Thanks/Thanks';
 
 
 function App() {
@@ -21,6 +24,9 @@ function App() {
       <Understanding />
       <Support />
       <Comments />
+      <Review />
+      <Thanks />
+      <Admin />
 
     </div>
   );
