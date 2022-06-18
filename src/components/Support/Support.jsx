@@ -30,6 +30,14 @@ function Support(){
         //kick to next page
         history.push('/comments');
     };
+
+    //handles back
+    const handleBack = (event) => {
+        event.preventDefault();
+        //kick to previous page
+        history.push('/understanding');
+    };
+
     return (
         <>
         <h2>How well are you being supported?</h2>
@@ -50,9 +58,8 @@ function Support(){
                 <label htmlFor="support5">5</label>
             </form>
             <br/>
+            <button onClick={handleBack}>BACK</button>
             <button onClick={handleSubmit}>NEXT</button>
-            <Link to="/understanding">BACK</Link>
-
     </>
     )
 }
