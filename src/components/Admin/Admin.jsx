@@ -6,7 +6,6 @@ import axios from 'axios';
 function Admin(){
     const dispatch = useDispatch();
     const feedbacks = useSelector(store => store.feedback);
-    console.log('line9', feedbacks)
 
     useEffect(() => {
         getFeedback();
