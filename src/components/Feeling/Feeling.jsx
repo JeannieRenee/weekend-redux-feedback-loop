@@ -2,8 +2,6 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
-
-
 function Feeling(){
     const dispatch = useDispatch();
     const history = useHistory();
@@ -18,7 +16,7 @@ function Feeling(){
           event.target.value,
         );
         console.log(event.target.value)
-      }
+    }
 
     //handles dispatch
     const handleSubmit = (event) => {
