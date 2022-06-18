@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
 import { HashRouter as Router, Route} from "react-router-dom";
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import axios from 'axios'; 
+import { useDispatch } from 'react-redux';
 
 
 // component imports
-import Home from '../Home/Home';
 import Comments from '../Comments/Comments';
 import Feeling from '../Feeling/Feeling';
 import Support from '../Support/Support';
@@ -17,6 +20,29 @@ import Thanks from '../Thanks/Thanks';
 import './App.css';
 
 function App() {
+  const feedbacks = useSelector(store => store.feedback)
+  const dispatch = useDispatch(); 
+
+  useEffect(() => {
+    console.log('in useEffect');
+    getFeedback();
+  },[])
+
+  const getFeedback = () => {
+    axios({
+      method: 'GET',
+      url: '/feedback'
+    })
+    .then((response) => {
+      dispatch({
+        type: 'FEEDBACK',
+        payload: response.data
+      })
+    })
+      .catch((err) => {
+        console.log('Err in GET', err);
+    })
+  }
 
   return (
     <Router>
@@ -26,13 +52,8 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
 
-      {/* home */}
-      <Route path="/" exact>
-        <Home />
-      </Route>
-
       {/* page 1 */}
-      <Route path="/Feeling" exact>
+      <Route path="/" exact>
         <Feeling />
       </Route>
       

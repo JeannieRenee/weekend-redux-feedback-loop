@@ -1,28 +1,8 @@
-import axios from 'axios'; 
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
+import { useSelector } from 'react-redux';
 
 function Admin(){
-    const dispatch = useDispatch();
-    const feedbacks = useSelector(store => store.feedback)
-
-    //page load 
-    useEffect(() => {
-        console.log('in useEffect');
-        getFeedback();
-    },[])
-
-    const getFeedback = () => {
-        axios.get('/feedback')
-        .then((response) => {
-            console.log('GET feedback', response.data);
-            dispatch({ type: `FEEDBACK`, payload: response.data });
-        })
-          .catch((err) => {
-            console.log('GET error', error);
-        });
-      };
+    const feedbacks = useSelector(store => store.feedback);
+    console.log('feedback', feedbacks);
 
     return (
         <table>
