@@ -25,7 +25,7 @@ function Support(){
         // dispatch
         dispatch({
         type: 'SUPPORT',
-        payload: value
+        payload: Number(value)
         });
         //kick to next page
         history.push('/comments');

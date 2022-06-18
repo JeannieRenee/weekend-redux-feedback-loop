@@ -23,7 +23,7 @@ function Feeling(){
         // dispatch
         dispatch({
         type: 'FEELING',
-        payload: value
+        payload: Number(value)
         });
         //kick to next page
         history.push('/understanding');

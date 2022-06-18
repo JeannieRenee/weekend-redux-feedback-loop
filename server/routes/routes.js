@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const addReview = req.body;
-    console.log(req.body)
+    console.log('line 18 post',req.body)
 
     const sqlText = `
         INSERT INTO "feedback"
