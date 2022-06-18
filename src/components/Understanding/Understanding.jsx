@@ -24,7 +24,7 @@ function Understanding(){
         event.preventDefault();
         // dispatch
         dispatch({
-        type: 'COMPREHENSION',
+        type: 'UNDERSTANDING',
         payload: value
         });
         //kick to next page
@@ -36,19 +36,19 @@ function Understanding(){
         <h2>How well are you understanding the content?</h2>
         <form>
                 <input type="radio" onChange={handleRating} id="understanding1" name="understanding" value="1"/>
-                <label for="understanding1">1</label>
+                <label htmlFor="understanding1">1</label>
 
                 <input type="radio" onChange={handleRating} id="understanding2" name="understanding" value="2"/>
-                <label for="understanding2">2</label>
+                <label htmlFor="understanding2">2</label>
 
                 <input type="radio" onChange={handleRating} id="understanding3" name="understanding" value="3"/>
-                <label for="understanding3">3</label>
+                <label htmlFor="understanding3">3</label>
 
                 <input type="radio" onChange={handleRating} id="understanding4" name="understanding" value="4"/>
-                <label for="understanding4">4</label>
+                <label htmlFor="understanding4">4</label>
             
                 <input type="radio" onChange={handleRating} id="understanding5" name="understanding" value="5"/>
-                <label for="understanding5">5</label>
+                <label htmlFor="understanding5">5</label>
             </form>
             <br/>
             <button onClick={handleSubmit}>NEXT</button>

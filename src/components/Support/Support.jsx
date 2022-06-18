@@ -35,19 +35,19 @@ function Support(){
         <h2>How well are you being supported?</h2>
         <form>
                 <input type="radio" onChange={handleRating} id="support1" name="support" value="1"/>
-                <label for="support1">1</label>
+                <label htmlFor="support1">1</label>
 
                 <input type="radio" onChange={handleRating} id="support2" name="support" value="2"/>
-                <label for="support2">2</label>
+                <label htmlFor="support2">2</label>
 
                 <input type="radio" onChange={handleRating} id="support3" name="support" value="3"/>
-                <label for="support3">3</label>
+                <label htmlFor="support3">3</label>
 
                 <input type="radio" onChange={handleRating} id="support4" name="support" value="4"/>
-                <label for="support4">4</label>
+                <label htmlFor="support4">4</label>
             
                 <input type="radio" onChange={handleRating} id="support5" name="support" value="5"/>
-                <label for="support5">5</label>
+                <label htmlFor="support5">5</label>
             </form>
             <br/>
             <button onClick={handleSubmit}>NEXT</button>

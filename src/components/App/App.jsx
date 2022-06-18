@@ -1,11 +1,6 @@
 import React from 'react';
 import './App.css';
 import { HashRouter as Router, Route} from "react-router-dom";
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import axios from 'axios'; 
-import { useDispatch } from 'react-redux';
-
 
 // component imports
 import Comments from '../Comments/Comments';
@@ -20,29 +15,6 @@ import Thanks from '../Thanks/Thanks';
 import './App.css';
 
 function App() {
-  const feedbacks = useSelector(store => store.feedback)
-  const dispatch = useDispatch(); 
-
-  useEffect(() => {
-    console.log('in useEffect');
-    getFeedback();
-  },[])
-
-  const getFeedback = () => {
-    axios({
-      method: 'GET',
-      url: '/feedback'
-    })
-    .then((response) => {
-      dispatch({
-        type: 'FEEDBACK',
-        payload: response.data
-      })
-    })
-      .catch((err) => {
-        console.log('Err in GET', err);
-    })
-  }
 
   return (
     <Router>

@@ -21,16 +21,15 @@ const feedback = (state = [], action) => {
 const feeling = (state = [], action) => {
     switch (action.type) {
       case "FEELING":
-        console.log(action.payload);
         return action.payload;
     }
     return state;
 };
 
-// reducer for comprehension
-const comprehension = (state = [], action) => {
+// reducer for understanding
+const understanding = (state = [], action) => {
     switch (action.type) {
-      case "COMPREHENSION":
+      case "UNDERSTANDING":
         return action.payload;
     }
     return state;
@@ -59,7 +58,7 @@ const store = createStore(
     combineReducers({
         feedback,
         feeling,
-        comprehension,
+        understanding,
         support,
         comments
     }),
