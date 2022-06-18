@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
+
 
 
 function Review(){
@@ -22,15 +23,18 @@ function Review(){
             comments
         };
     
-        // dispatch
-        dispatch({
-            type: 'FEEDBACK',
-            payload: newFeedbackArray
-        });
-
-        //kick to next page
-        history.push('/thanks');
-        };
+        axios.post(`/feedback`, newFeedbackArray)
+          .then((response) => {
+            console.log("POST /feedback", response);
+            dispatch({
+              type: "FEEDBACK",
+              payload: response.data,
+            });
+          })
+          .catch((error) => {
+            console.log("Error getting feedback", error);
+          });
+      };
 
     return (
         <>
