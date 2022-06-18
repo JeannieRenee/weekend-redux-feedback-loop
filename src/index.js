@@ -15,12 +15,53 @@ const feedback = (state = [], action) => {
         return action.payload;
     }
     return state;
-  };
+};
+
+// reducer for feedback feeling
+const feeling = (state = [], action) => {
+    switch (action.type) {
+      case "FEELING":
+        console.log(action.payload);
+        return action.payload;
+    }
+    return state;
+};
+
+// reducer for comprehension
+const comprehension = (state = [], action) => {
+    switch (action.type) {
+      case "COMPREHENSION":
+        return action.payload;
+    }
+    return state;
+};
+
+// reducer for support
+const support = (state = [], action) => {
+    switch (action.type) {
+      case "SUPPORT":
+        return action.payload;
+    }
+    return state;
+};
+
+// reducer for comments
+const comments = (state = [], action) => {
+    switch (action.type) {
+      case "COMMENTS":
+        return action.payload;
+    }
+    return state;
+};
 
 // redux store
 const store = createStore(
     combineReducers({
-        feedback
+        feedback,
+        feeling,
+        comprehension,
+        support,
+        comments
     }),
     applyMiddleware(logger)
   );
@@ -31,4 +72,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root'));
     
-registerServiceWorker();
+registerServiceWorker() ;
