@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
     console.log('GET');
-    pool.query('SELECT * from "feedback" ORDER BY "date" DESC; ;')
+    pool.query('SELECT * from "feedback" ORDER BY "date" DESC;')
     .then((result) => {
         res.send(result.rows);
     }).catch((error) => {
