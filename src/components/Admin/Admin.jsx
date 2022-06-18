@@ -7,7 +7,6 @@ function Admin(){
     const dispatch = useDispatch();
     const feedbacks = useSelector(store => store.feedback)
 
-
     //page load 
     useEffect(() => {
         console.log('in useEffect');
