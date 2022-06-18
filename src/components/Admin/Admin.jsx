@@ -1,22 +1,21 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Admin(){
-    const feedbacks = useSelector(store => store.feedback);
-    console.log('feedback', feedbacks);
-
-    return (
+    const feedbacks = useSelector(store => store.feedback)
+    
+    return ( 
         <table>
             <thead>
                 <tr>
                     <th>Feeling</th>
-                    <th>Comprehension</th>                
+                    <th>Understanding</th>                
                     <th>Support</th>
                     <th>Comments</th>
                 </tr>
             </thead>
             <tbody>
                 {feedbacks.map((feedback) => {
-                    return <tr key={feedback.id}>
+                    return <tr>
                         <td>{feedback.feeling}</td>
                         <td>{feedback.understanding}</td>                
                         <td>{feedback.support}</td>

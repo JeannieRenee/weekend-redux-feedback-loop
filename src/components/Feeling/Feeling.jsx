@@ -34,19 +34,19 @@ function Feeling(){
             <h2>How are you feeling today?</h2>
             <form>
                 <input type="radio" onChange={handleRating} id="feeling1" name="feeling" value="1"/>
-                <label for="feeling1">1</label>
+                <label htmlFor="feeling1">1</label>
 
                 <input type="radio" onChange={handleRating} id="feeling2" name="feeling" value="2"/>
-                <label for="feeling2">2</label>
+                <label htmlFor="feeling2">2</label>
 
                 <input type="radio" onChange={handleRating} id="feeling3" name="feeling" value="3"/>
-                <label for="feeling3">3</label>
+                <label htmlFor="feeling3">3</label>
 
                 <input type="radio" onChange={handleRating} id="feeling4" name="feeling" value="4"/>
-                <label for="feeling4">4</label>
+                <label htmlFor="feeling4">4</label>
             
                 <input type="radio" onChange={handleRating} id="feeling5" name="feeling" value="5"/>
-                <label for="feeling5">5</label>
+                <label htmlFor="feeling5">5</label>
             </form>
             <br/>
             <button onClick={handleSubmit}>NEXT</button>
