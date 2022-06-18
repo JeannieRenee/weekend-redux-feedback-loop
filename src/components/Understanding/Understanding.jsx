@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Understanding(){
@@ -16,13 +17,11 @@ function Understanding(){
         setValue(
           event.target.value,
         );
-        console.log(event.target.value)
       }
 
     //handles dispatch
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(value)
         // dispatch
         dispatch({
         type: 'COMPREHENSION',
@@ -53,6 +52,8 @@ function Understanding(){
             </form>
             <br/>
             <button onClick={handleSubmit}>NEXT</button>
+            <Link to="/Feeling">BACK</Link>
+
     </>
     )
 }

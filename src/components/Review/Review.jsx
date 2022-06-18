@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import axios from 'axios'; 
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 
 function Review(){
+    const history = useHistory(); 
     const store = useSelector(store => store);
+    const dispatch = useDispatch();
 
     const feeling = useSelector(store => store.feeling);
     const comprehension = useSelector(store => store.comprehension);
@@ -21,15 +24,14 @@ function Review(){
         };
         console.log(newFeedbackObject)
 
-        axios.post(`/feedback`, newFeedbackObject)
-        .then(response => {
-            console.log('POST success');
-        })
-        .catch( error => {
-            console.log('POST error', error);
-        });
-    }
-
+        // dispatch
+        dispatch({
+            type: 'FEEDBACK',
+            payload: newFeedbackObject
+            });
+            //kick to next page
+            history.push('/thanks');
+        };
 
     return (
         <>
@@ -40,6 +42,8 @@ function Review(){
             <p>Comments:  {comments}</p>
 
             <button onClick={handleSubmit}>SUBMIT</button>
+            <Link to="/comments">BACK</Link>
+
         </>
     )
 }

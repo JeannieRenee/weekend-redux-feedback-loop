@@ -15,13 +15,11 @@ function Feeling(){
         setValue(
           event.target.value,
         );
-        console.log(event.target.value)
     }
 
     //handles dispatch
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(value)
         // dispatch
         dispatch({
         type: 'FEELING',

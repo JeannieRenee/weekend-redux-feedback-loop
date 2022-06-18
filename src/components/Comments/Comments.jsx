@@ -18,7 +18,6 @@ function Comments(){
     //handles dispatch
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(comment)
         // dispatch
         dispatch({
         type: 'COMMENTS',
@@ -40,6 +39,8 @@ function Comments(){
             <br/>
             <br/>
             <button onClick={handleSubmit}>NEXT</button>
+            <Link to="/support">BACK</Link>
+
         </>
     )
 }
