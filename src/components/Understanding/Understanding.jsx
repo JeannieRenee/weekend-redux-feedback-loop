@@ -6,6 +6,7 @@ import { useState } from 'react';
 function Understanding(){
     const dispatch = useDispatch();
     const history = useHistory();
+    const [button, setButton] = useState(false);
 
     const [value, setValue] = useState({
         understanding:3
@@ -16,7 +17,10 @@ function Understanding(){
         setValue(
           event.target.value,
         );
-      }
+    //reactivate button
+    setButton(true)
+    }
+
     //handles back
     const handleBack = (event) => {
         event.preventDefault();
@@ -57,8 +61,13 @@ function Understanding(){
             </form>
             <br/>
             <button onClick={handleBack}>BACK</button>
-            <button onClick={handleSubmit}>NEXT</button>
-    </>
+            { 
+            button ? 
+            <button onClick={handleSubmit} >NEXT</button>
+            :
+            <button disabled >NEXT</button>
+            }    
+        </>
     )
 }
 

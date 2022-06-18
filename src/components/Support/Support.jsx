@@ -1,12 +1,12 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-
 
 function Support(){
     const dispatch = useDispatch();
     const history = useHistory();
+    const [button, setButton] = useState(false);
+
 
     const [value, setValue] = useState({
         support:3
@@ -17,7 +17,9 @@ function Support(){
         setValue(
           event.target.value,
         );
-      }
+    //reactivate button
+    setButton(true)
+    }
 
     //handles dispatch
     const handleSubmit = (event) => {
@@ -59,7 +61,12 @@ function Support(){
             </form>
             <br/>
             <button onClick={handleBack}>BACK</button>
-            <button onClick={handleSubmit}>NEXT</button>
+            { 
+            button ? 
+            <button onClick={handleSubmit} >NEXT</button>
+            :
+            <button disabled >NEXT</button>
+            }
     </>
     )
 }
