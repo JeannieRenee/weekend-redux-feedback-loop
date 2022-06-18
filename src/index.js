@@ -11,8 +11,8 @@ import logger from "redux-logger";
 // reducer for feedback data in db
 const feedback = (state = [], action) => {
     switch (action.type) {
-      case "GET_FEEDBACK":
-        return action.payload;
+      case "FEEDBACK":
+        return [...state, action.payload];
     }
     return state;
 };

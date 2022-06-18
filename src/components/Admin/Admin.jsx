@@ -17,7 +17,7 @@ function Admin(){
         axios.get('/feedback')
         .then((response) => {
             console.log('GET feedback', response.data);
-            dispatch({ type: `GET_FEEDBACK`, payload: response.data });
+            dispatch({ type: `FEEDBACK`, payload: response.data });
         })
           .catch((err) => {
             console.log('GET error', error);

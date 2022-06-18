@@ -1,6 +1,8 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Support(){
     const dispatch = useDispatch();
@@ -15,13 +17,11 @@ function Support(){
         setValue(
           event.target.value,
         );
-        console.log(event.target.value)
       }
 
     //handles dispatch
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(value)
         // dispatch
         dispatch({
         type: 'SUPPORT',
@@ -51,6 +51,8 @@ function Support(){
             </form>
             <br/>
             <button onClick={handleSubmit}>NEXT</button>
+            <Link to="/understanding">BACK</Link>
+
     </>
     )
 }
