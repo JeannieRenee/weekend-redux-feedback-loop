@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
 import axios from 'axios';
+// stylesheets import
+import './Admin.css';
 
 
 function Admin(){
