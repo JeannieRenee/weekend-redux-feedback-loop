@@ -1,11 +1,27 @@
-import { useSelector } from 'react-redux'; 
-import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react'; 
+import axios from 'axios'; 
 
 function Admin(){
-    // baby imports 
-    const history = useHistory();
-    const feedbacks = useSelector(store => store.feedback);
-    console.log('feedback', feedbacks)
+    //page load 
+    useEffect(() => {
+        console.log('in useEffect');
+        getFeedback();
+    },[])
+
+    const getFeedback = () => {
+        axios({
+          method: 'GET',
+          url: '/feedback'
+        })
+        .then((response) => {
+            console.log('GET feedback', response.data);
+        })
+          .catch((err) => {
+            console.log('GET error', error);
+        });
+      };
+
+      const feedbacks = getFeedback();
 
     return (
         <table>
@@ -15,8 +31,6 @@ function Admin(){
                     <th>Comprehension</th>                
                     <th>Support</th>
                     <th>Comments</th>
-                    <th>Delete</th>
-                    <th>Flag</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,11 +40,8 @@ function Admin(){
                         <td>{feedback.understanding}</td>                
                         <td>{feedback.support}</td>
                         <td>{feedback.comments}</td>
-                        <td> <button>❌</button></td>
-                        <td> <button>❓</button></td>
                 </tr>
                 })} 
-
             </tbody>
         </table>
     )
