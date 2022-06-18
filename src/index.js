@@ -12,7 +12,7 @@ import logger from "redux-logger";
 const feedback = (state = [], action) => {
     switch (action.type) {
       case "FEEDBACK":
-        return [...state, action.payload];
+        return [action.payload];
     }
     return state;
 };
