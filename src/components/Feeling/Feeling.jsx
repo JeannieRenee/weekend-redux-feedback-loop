@@ -2,9 +2,17 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+
 function Feeling(){
     const dispatch = useDispatch();
     const history = useHistory();
+    const [button, setButton] = useState(false);
+
 
     const [value, setValue] = useState({
         feeling:3
@@ -15,6 +23,8 @@ function Feeling(){
         setValue(
           event.target.value,
         );
+    //reactivate button
+    setButton(true)
     }
 
     //handles dispatch
@@ -49,7 +59,13 @@ function Feeling(){
                 <label htmlFor="feeling5">5</label>
             </form>
             <br/>
-            <button onClick={handleSubmit}>NEXT</button>
+
+            { 
+            button ? 
+            <button onClick={handleSubmit} >NEXT</button>
+            :
+            <button disabled >NEXT</button>
+            }
         </>  
     )
 }

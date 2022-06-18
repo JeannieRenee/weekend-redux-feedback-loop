@@ -4,7 +4,7 @@ const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
     console.log('GET');
-    pool.query('SELECT * from "feedback";')
+    pool.query('SELECT * from "feedback" ORDER BY "date" DESC; ;')
     .then((result) => {
         res.send(result.rows);
     }).catch((error) => {
@@ -15,8 +15,6 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const addReview = req.body;
-    console.log('line 18 post',req.body)
-
     const sqlText = `
         INSERT INTO "feedback"
             ("feeling", "understanding", "support", "comments")
