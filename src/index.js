@@ -57,6 +57,7 @@ const comments = (state = [], action) => {
 // redux store
 const store = createStore(
     combineReducers({
+        feedback,
         feeling,
         comprehension,
         support,

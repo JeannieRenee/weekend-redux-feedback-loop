@@ -1,7 +1,13 @@
-import { useEffect } from 'react'; 
 import axios from 'axios'; 
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 function Admin(){
+    const dispatch = useDispatch();
+    const feedbacks = useSelector(store => store.feedback)
+
+
     //page load 
     useEffect(() => {
         console.log('in useEffect');
@@ -9,19 +15,15 @@ function Admin(){
     },[])
 
     const getFeedback = () => {
-        axios({
-          method: 'GET',
-          url: '/feedback'
-        })
+        axios.get('/feedback')
         .then((response) => {
             console.log('GET feedback', response.data);
+            dispatch({ type: `GET_FEEDBACK`, payload: response.data });
         })
           .catch((err) => {
             console.log('GET error', error);
         });
       };
-
-      const feedbacks = getFeedback();
 
     return (
         <table>
