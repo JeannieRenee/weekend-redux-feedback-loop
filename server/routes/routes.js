@@ -27,16 +27,14 @@ router.post('/', (req, res) => {
         addReview.feeling,
         addReview.understanding,
         addReview.support,
-        addReview.comment
+        addReview.comments
     ]
     pool.query(sqlText, sqlValues)
-        .then((res) => {
+        .then((dbRes) => {
             console.log('Added feedback to the database');
-            res.sendStatus(201);
         })
         .catch((error) => {
             console.log('Error making database query', error);
-            res.sendStatus(500);
         })
 })
 

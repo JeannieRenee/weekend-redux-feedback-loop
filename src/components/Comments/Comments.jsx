@@ -8,7 +8,7 @@ function Comments(){
     const history = useHistory();
     const [comment, setComment] = useState('');
 
-    //handles change of the rating
+    //handles comment change
     const handleComment = (event) => {
         setComment(
           event.target.value,
