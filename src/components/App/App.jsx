@@ -11,17 +11,19 @@ import Review from '../Review/Review';
 import Admin from '../Admin/Admin';
 import Thanks from '../Thanks/Thanks';
 
-// stylesheets import
-import './App.css';
-
 function App() {
 
   return (
     <Router>
       <div className='App'>
         <header className='App-header'>
-          <h1 className='App-title'>Feedback!</h1>
-          <h4>Don't forget it!</h4>
+          <img 
+            height="124.5"
+            width="470"
+            src="https://www.primeacademy.io/hs-fs/hubfs/Branding/Prime%20Brand/Prime%20Logo%20White%20Horizontal-1.png?width=1880&height=498&name=Prime%20Logo%20White%20Horizontal-1.png" 
+            alt="Prime Logo"
+          />
+          <h1 className='App-title'>Daily Reflections</h1>
         </header>
 
       {/* page 1 */}
@@ -59,6 +61,16 @@ function App() {
         <Admin />
       </Route>
       
+      <div className='App-footer'
+        style={{
+          position: "fixed",
+          left: 0,
+          bottom: 0,
+          right: 0,
+        }}
+      >
+      </div>
+
       </div>
     </Router>
   );
