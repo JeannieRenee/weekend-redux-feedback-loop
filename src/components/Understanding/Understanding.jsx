@@ -1,7 +1,6 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 
 function Understanding(){
@@ -18,6 +17,12 @@ function Understanding(){
           event.target.value,
         );
       }
+    //handles back
+    const handleBack = (event) => {
+        event.preventDefault();
+        //kick to previous page
+        history.push('/');
+    };
 
     //handles dispatch
     const handleSubmit = (event) => {
@@ -51,9 +56,8 @@ function Understanding(){
                 <label htmlFor="understanding5">5</label>
             </form>
             <br/>
+            <button onClick={handleBack}>BACK</button>
             <button onClick={handleSubmit}>NEXT</button>
-            <Link to="/Feeling">BACK</Link>
-
     </>
     )
 }

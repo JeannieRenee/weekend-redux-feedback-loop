@@ -26,6 +26,14 @@ function Comments(){
         //kick to next page
         history.push('/review');
     };
+    //handles back
+
+    const handleBack = (event) => {
+        event.preventDefault();
+        //kick to previous page
+        history.push('/support');
+    };
+
     return (
         <>
             <h2>Any comments you want to leave?</h2>
@@ -37,10 +45,8 @@ function Comments(){
                 size="50"
             /> 
             <br/>
-            <br/>
+            <button onClick={handleBack}>BACK</button>
             <button onClick={handleSubmit}>NEXT</button>
-            <Link to="/support">BACK</Link>
-
         </>
     )
 }
