@@ -10,6 +10,8 @@ function Comments(){
                 type="text" 
                 placeholder="feeling?"
             /> 
+            <br/>
+            <br/>
             <Link to='/Review'>NEXT</Link>
         </>
     )
