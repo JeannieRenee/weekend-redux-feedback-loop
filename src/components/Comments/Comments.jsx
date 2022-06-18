@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
@@ -26,8 +25,8 @@ function Comments(){
         //kick to next page
         history.push('/review');
     };
+    
     //handles back
-
     const handleBack = (event) => {
         event.preventDefault();
         //kick to previous page
