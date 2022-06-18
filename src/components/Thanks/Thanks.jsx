@@ -6,9 +6,8 @@ function Thanks(){
         <>
             <h2>Thanks for your feedback!</h2>
 
-            <Link to='/feeling'>LEAVE NEW FEEDBACK</Link>
+            <Link to='/'>LEAVE NEW FEEDBACK</Link>
             <br/>
-            <Link to='/'>Exit to Home</Link>
 
         </>
     )
