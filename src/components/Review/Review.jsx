@@ -32,8 +32,10 @@ function Review(){
             });
           })
           .catch((error) => {
-            console.log("Error getting feedback", error);
+            console.log("Error posting feedback", error);
           });
+          history.push('/thanks')
+
       };
 
     return (

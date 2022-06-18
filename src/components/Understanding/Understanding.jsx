@@ -25,7 +25,7 @@ function Understanding(){
         // dispatch
         dispatch({
         type: 'UNDERSTANDING',
-        payload: value
+        payload: Number(value)
         });
         //kick to next page
         history.push('/support');
