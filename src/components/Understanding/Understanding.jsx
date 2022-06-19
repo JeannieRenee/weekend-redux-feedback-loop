@@ -2,12 +2,21 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
+//mui imports
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
+
+//mui icon imports
+import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
+import SentimentDissatisfiedIcon from '@mui/icons-material/SentimentDissatisfied';
+import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
+import SentimentSatisfiedIcon from '@mui/icons-material/SentimentSatisfied';
+import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
+import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 
 function Understanding(){
     const dispatch = useDispatch();
@@ -48,17 +57,24 @@ function Understanding(){
     return (
         <>
             <h2>How well are you understanding the content?</h2>
+            <br/>
+            <SentimentVeryDissatisfiedIcon fontSize="large" className="verybad"/>
+            <SentimentDissatisfiedIcon fontSize="large" className="bad"/>
+            <SentimentNeutralIcon fontSize="large" className="neutral"/>
+            <SentimentSatisfiedIcon fontSize="large" className="good"/>
+            <SentimentSatisfiedAltIcon fontSize="large" className="verygood"/>
+            <br/>
             <FormControl>
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
                     name="radio-buttons-group"
                     row
                 >
-                    <FormControlLabel value="1" onChange={handleRating} control={<Radio />} label="1" labelPlacement="top"/>
-                    <FormControlLabel value="2" onChange={handleRating} control={<Radio />} label="2" labelPlacement="top"/>
-                    <FormControlLabel value="3" onChange={handleRating} control={<Radio />} label="3" labelPlacement="top"/>
-                    <FormControlLabel value="4" onChange={handleRating} control={<Radio />} label="4" labelPlacement="top"/>
-                    <FormControlLabel value="5" onChange={handleRating} control={<Radio />} label="5" labelPlacement="top"/>
+                    <FormControlLabel value="1" onChange={handleRating} control={<Radio />} label="" labelPlacement="top"/>
+                    <FormControlLabel value="2" onChange={handleRating} control={<Radio />} label="" labelPlacement="top"/>
+                    <FormControlLabel value="3" onChange={handleRating} control={<Radio />} label="" labelPlacement="top"/>
+                    <FormControlLabel value="4" onChange={handleRating} control={<Radio />} label="" labelPlacement="top"/>
+                    <FormControlLabel value="5" onChange={handleRating} control={<Radio />} label="" labelPlacement="top"/>
                 </RadioGroup>
             </FormControl>
             <br/>

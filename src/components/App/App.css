@@ -33,3 +33,16 @@
 .buttons {
 margin-top: 10px;
 }
+
+.verybad {
+  margin-right: 40px; 
+}
+.bad {
+  margin-right: 40px; 
+}
+.good {
+  margin-left: 40px; 
+}
+.verygood {
+  margin-left: 40px; 
+}
