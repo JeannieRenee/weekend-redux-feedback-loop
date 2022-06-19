@@ -5,12 +5,10 @@ import { useState } from 'react';
 function Feeling(){
     const dispatch = useDispatch();
     const history = useHistory();
+
+    // local states
     const [button, setButton] = useState(false);
-
-
-    const [value, setValue] = useState({
-        feeling:3
-    });
+    const [value, setValue] = useState();
 
     //handles change of the rating
     const handleRating = (event) => {
@@ -26,8 +24,8 @@ function Feeling(){
         event.preventDefault();
         // dispatch
         dispatch({
-        type: 'FEELING',
-        payload: Number(value)
+            type: 'FEELING',
+            payload: Number(value)
         });
         //kick to next page
         history.push('/understanding');
@@ -53,13 +51,14 @@ function Feeling(){
                 <label htmlFor="feeling5">5</label>
             </form>
             <br/>
-
-            { 
-            button ? 
-            <button onClick={handleSubmit} >NEXT</button>
-            :
-            <button disabled >NEXT</button>
-            }
+            <div>
+                { 
+                button ? 
+                <button onClick={handleSubmit} >NEXT</button>
+                :
+                <button disabled >NEXT</button>
+                }
+            </div>
         </>  
     )
 }

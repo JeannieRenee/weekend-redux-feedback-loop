@@ -5,12 +5,10 @@ import { useState } from 'react';
 function Support(){
     const dispatch = useDispatch();
     const history = useHistory();
+
+    // local states
     const [button, setButton] = useState(false);
-
-
-    const [value, setValue] = useState({
-        support:3
-    });
+    const [value, setValue] = useState();
 
     //handles change of the rating
     const handleRating = (event) => {
@@ -20,6 +18,13 @@ function Support(){
     //reactivate button
     setButton(true)
     }
+    
+    //handles back
+    const handleBack = (event) => {
+        event.preventDefault();
+        //kick to previous page
+        history.push('/understanding');
+    };
 
     //handles dispatch
     const handleSubmit = (event) => {
@@ -33,17 +38,10 @@ function Support(){
         history.push('/comments');
     };
 
-    //handles back
-    const handleBack = (event) => {
-        event.preventDefault();
-        //kick to previous page
-        history.push('/understanding');
-    };
-
     return (
         <>
-        <h2>How well are you being supported?</h2>
-        <form>
+            <h2>How well are you being supported?</h2>
+            <form>
                 <input type="radio" onChange={handleRating} id="support1" name="support" value="1"/>
                 <label htmlFor="support1">1</label>
 
@@ -60,14 +58,16 @@ function Support(){
                 <label htmlFor="support5">5</label>
             </form>
             <br/>
-            <button onClick={handleBack}>BACK</button>
-            { 
-            button ? 
-            <button onClick={handleSubmit} >NEXT</button>
-            :
-            <button disabled >NEXT</button>
-            }
-    </>
+            <div>
+                <button onClick={handleBack}>BACK</button>
+                { 
+                button ? 
+                <button onClick={handleSubmit} >NEXT</button>
+                :
+                <button disabled >NEXT</button>
+                }
+            </div>
+        </>
     )
 }
 

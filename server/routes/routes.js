@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
+// GET route
 router.get('/', (req, res) => {
     console.log('GET');
     pool.query('SELECT * from "feedback" ORDER BY "date" DESC, "id" DESC;')
@@ -13,6 +14,7 @@ router.get('/', (req, res) => {
     });
 } ) 
 
+//POST route
 router.post('/', (req, res) => {
     const addReview = req.body;
     const sqlText = `
@@ -28,6 +30,10 @@ router.post('/', (req, res) => {
         addReview.comments
     ]
     pool.query(sqlText, sqlValues)
+    // i took out the response codes in the .then and ,catch because i was getting both errors thrown. 
+    // i know it was not the right fix but couldn't figure it out. 
+    // everything was working properly without them so i threw them away lol 
+    // please tell me the right solution 
         .then((dbRes) => {
             console.log('Added feedback to the database');
         })

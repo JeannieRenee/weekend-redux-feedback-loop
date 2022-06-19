@@ -2,15 +2,13 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
-
 function Understanding(){
     const dispatch = useDispatch();
     const history = useHistory();
+    
+    // local states
     const [button, setButton] = useState(false);
-
-    const [value, setValue] = useState({
-        understanding:3
-    });
+    const [value, setValue] = useState();
     
     //handles change of the rating
     const handleRating = (event) => {
@@ -33,8 +31,8 @@ function Understanding(){
         event.preventDefault();
         // dispatch
         dispatch({
-        type: 'UNDERSTANDING',
-        payload: Number(value)
+            type: 'UNDERSTANDING',
+            payload: Number(value)
         });
         //kick to next page
         history.push('/support');
@@ -42,8 +40,8 @@ function Understanding(){
 
     return (
         <>
-        <h2>How well are you understanding the content?</h2>
-        <form>
+            <h2>How well are you understanding the content?</h2>
+            <form>
                 <input type="radio" onChange={handleRating} id="understanding1" name="understanding" value="1"/>
                 <label htmlFor="understanding1">1</label>
 
@@ -60,13 +58,15 @@ function Understanding(){
                 <label htmlFor="understanding5">5</label>
             </form>
             <br/>
-            <button onClick={handleBack}>BACK</button>
-            { 
-            button ? 
-            <button onClick={handleSubmit} >NEXT</button>
-            :
-            <button disabled >NEXT</button>
-            }    
+            <div>
+                <button onClick={handleBack}>BACK</button>
+                { 
+                button ? 
+                <button onClick={handleSubmit} >NEXT</button>
+                :
+                <button disabled >NEXT</button>
+                }
+            </div>
         </>
     )
 }
