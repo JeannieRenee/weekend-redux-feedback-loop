@@ -2,6 +2,12 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
+import Button from '@mui/material/Button';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+
 function Feeling(){
     const dispatch = useDispatch();
     const history = useHistory();
@@ -34,29 +40,27 @@ function Feeling(){
     return (
         <>
             <h2>How are you feeling today?</h2>
-            <form>
-                <input type="radio" onChange={handleRating} id="feeling1" name="feeling" value="1"/>
-                <label htmlFor="feeling1">1</label>
-
-                <input type="radio" onChange={handleRating} id="feeling2" name="feeling" value="2"/>
-                <label htmlFor="feeling2">2</label>
-
-                <input type="radio" onChange={handleRating} id="feeling3" name="feeling" value="3"/>
-                <label htmlFor="feeling3">3</label>
-
-                <input type="radio" onChange={handleRating} id="feeling4" name="feeling" value="4"/>
-                <label htmlFor="feeling4">4</label>
-            
-                <input type="radio" onChange={handleRating} id="feeling5" name="feeling" value="5"/>
-                <label htmlFor="feeling5">5</label>
-            </form>
+            <FormControl>
+                <RadioGroup
+                    aria-labelledby="demo-radio-buttons-group-label"
+                    defaultValue="female"
+                    name="radio-buttons-group"
+                    row
+                >
+                    <FormControlLabel value="1" onChange={handleRating} control={<Radio />} label="1" labelPlacement="top"/>
+                    <FormControlLabel value="2" onChange={handleRating} control={<Radio />} label="2" labelPlacement="top"/>
+                    <FormControlLabel value="3" onChange={handleRating} control={<Radio />} label="3" labelPlacement="top"/>
+                    <FormControlLabel value="4" onChange={handleRating} control={<Radio />} label="4" labelPlacement="top"/>
+                    <FormControlLabel value="5" onChange={handleRating} control={<Radio />} label="5" labelPlacement="top"/>
+                </RadioGroup>
+            </FormControl>
             <br/>
             <div>
                 { 
                 button ? 
-                <button onClick={handleSubmit} >NEXT</button>
+                <Button onClick={handleSubmit} variant="text" >NEXT</Button>
                 :
-                <button disabled >NEXT</button>
+                <Button disabled variant="text" >NEXT</Button>
                 }
             </div>
         </>  

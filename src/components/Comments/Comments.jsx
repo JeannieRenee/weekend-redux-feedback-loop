@@ -2,6 +2,10 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import TextField from '@mui/material/TextField';
+
 function Comments(){
     const dispatch = useDispatch();
     const history = useHistory();
@@ -36,16 +40,12 @@ function Comments(){
     return (
         <>
             <h2>Any comments you want to leave?</h2>
-            <input 
-                onChange={handleComment}
-                id="comments" 
-                type="text" 
-                placeholder="feeling?"
-                size="50"
-            /> 
+            <TextField multiline fullWidth id="comments" label="Comments?" variant="outlined" onChange={handleComment}/>
             <br/>
-            <button onClick={handleBack}>BACK</button>
-            <button onClick={handleSubmit}>NEXT</button>
+            <ButtonGroup variant="text" aria-label="text button group">
+                <Button onClick={handleBack}>BACK</Button>
+                <Button onClick={handleSubmit} >NEXT</Button>
+            </ButtonGroup>
         </>
     )
 }
