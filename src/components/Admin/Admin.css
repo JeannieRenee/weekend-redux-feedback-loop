@@ -33,3 +33,9 @@
     width: 80%;
     border-collapse: collapse;
   }
+
+  .body {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  

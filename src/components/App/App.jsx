@@ -25,7 +25,7 @@ function App() {
           />
           <h1 className='App-title'>Daily Reflections</h1>
         </header>
-
+        <div className='body'>
         {/* page 1/Home */}
         <Route path="/" exact>
           <Feeling />
@@ -60,7 +60,7 @@ function App() {
         <Route path="/Admin" exact>
           <Admin />
         </Route>
-        
+        </div>
         <div className='App-footer'
           style={{
             position: "fixed",

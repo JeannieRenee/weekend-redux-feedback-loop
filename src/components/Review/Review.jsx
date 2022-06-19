@@ -2,6 +2,9 @@ import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
 function Review() {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -51,9 +54,11 @@ function Review() {
       <p>Understanding: {understanding} </p>
       <p>Support: {support}</p>
       <p>Comments: {comments}</p>
-
-      <button onClick={handleBack}>BACK</button>
-      <button onClick={handleSubmit}>SUBMIT</button>
+      
+      <ButtonGroup variant="text" aria-label="text button group">
+        <Button onClick={handleBack}>BACK</Button>
+        <Button onClick={handleSubmit}>SUBMIT</Button>
+      </ButtonGroup>
     </>
   );
 }

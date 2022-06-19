@@ -22,3 +22,8 @@
   background-color: #05aa9e;
   min-height: 100px;
 }
+
+.body {
+  margin-left: 15%;
+  margin-right: 15%;
+}
