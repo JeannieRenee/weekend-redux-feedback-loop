@@ -19,8 +19,8 @@ function Comments(){
         event.preventDefault();
         // dispatch
         dispatch({
-        type: 'COMMENTS',
-        payload: comment
+            type: 'COMMENTS',
+            payload: comment
         });
         //kick to next page
         history.push('/review');

@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import { HashRouter as Router, Route} from "react-router-dom";
-
+//import stylesheet
+import './App.css';
 // component imports
 import Comments from '../Comments/Comments';
 import Feeling from '../Feeling/Feeling';
@@ -26,51 +26,50 @@ function App() {
           <h1 className='App-title'>Daily Reflections</h1>
         </header>
 
-      {/* page 1 */}
-      <Route path="/" exact>
-        <Feeling />
-      </Route>
-      
-      {/* page 2 */}
-      <Route path="/Understanding" exact>
-        <Understanding />
-      </Route>
-      
-      {/* page 3 */}
-      <Route path="/Support" exact>
-        <Support />
-      </Route>
-      
-      {/* page 4 */}
-      <Route path="/Comments" exact>
-        <Comments />
-      </Route>
-      
-      {/* page 5 */}      
-      <Route path="/Review" exact>
-        <Review />
-      </Route>
-      
-      {/* page 6 */}
-      <Route path="/Thanks" exact>
-        <Thanks />
-      </Route>
-      
-      {/* admin */}      
-      <Route path="/Admin" exact>
-        <Admin />
-      </Route>
-      
-      <div className='App-footer'
-        style={{
-          position: "fixed",
-          left: 0,
-          bottom: 0,
-          right: 0,
-        }}
-      >
-      </div>
-
+        {/* page 1/Home */}
+        <Route path="/" exact>
+          <Feeling />
+        </Route>
+        
+        {/* page 2 */}
+        <Route path="/Understanding" exact>
+          <Understanding />
+        </Route>
+        
+        {/* page 3 */}
+        <Route path="/Support" exact>
+          <Support />
+        </Route>
+        
+        {/* page 4 */}
+        <Route path="/Comments" exact>
+          <Comments />
+        </Route>
+        
+        {/* page 5 */}      
+        <Route path="/Review" exact>
+          <Review />
+        </Route>
+        
+        {/* page 6 */}
+        <Route path="/Thanks" exact>
+          <Thanks />
+        </Route>
+        
+        {/* admin page */}      
+        <Route path="/Admin" exact>
+          <Admin />
+        </Route>
+        
+        <div className='App-footer'
+          style={{
+            position: "fixed",
+            left: 0,
+            bottom: 0,
+            right: 0,
+          }}
+        >
+        </div>
       </div>
     </Router>
   );

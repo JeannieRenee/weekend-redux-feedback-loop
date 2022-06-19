@@ -6,11 +6,13 @@ function Review() {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  // store imports
   const feeling = useSelector((store) => store.feeling);
   const understanding = useSelector((store) => store.understanding);
   const support = useSelector((store) => store.support);
   const comments = useSelector((store) => store.comments);
 
+  // this function creates an object from items stored in state
   function handleSubmit() {
     let newFeedbackArray = {
       feeling,
@@ -19,6 +21,7 @@ function Review() {
       comments,
     };
 
+    // axios call to post object
     axios
       .post(`/feedback`, newFeedbackArray)
       .then((response) => {
@@ -34,7 +37,7 @@ function Review() {
     history.push("/thanks");
   }
 
-  //handles back
+  //handles back button
   const handleBack = (event) => {
     event.preventDefault();
     //kick to previous page
