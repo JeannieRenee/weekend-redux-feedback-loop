@@ -43,7 +43,6 @@ function Feeling(){
             <FormControl>
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="female"
                     name="radio-buttons-group"
                     row
                 >
@@ -55,7 +54,7 @@ function Feeling(){
                 </RadioGroup>
             </FormControl>
             <br/>
-            <div>
+            <div className="buttons">
                 { 
                 button ? 
                 <Button onClick={handleSubmit} variant="text" >NEXT</Button>

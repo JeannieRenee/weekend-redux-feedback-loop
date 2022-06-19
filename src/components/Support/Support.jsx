@@ -51,7 +51,6 @@ function Support(){
             <FormControl >
                 <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="female"
                     name="radio-buttons-group"
                     row
                 >
@@ -63,7 +62,7 @@ function Support(){
                 </RadioGroup>
             </FormControl>
             <br/>
-            <div>
+            <div className="buttons">
                 <ButtonGroup variant="text" aria-label="text button group">
                     <Button onClick={handleBack}>BACK</Button>
                     { 
