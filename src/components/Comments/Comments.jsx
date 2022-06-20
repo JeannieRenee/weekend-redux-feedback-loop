@@ -48,6 +48,7 @@ function Comments(){
                     <Button onClick={handleSubmit} >NEXT</Button>
                 </ButtonGroup>
             </div>
+            <p>Page 4/5</p>
         </>
     )
 }

@@ -90,6 +90,7 @@ function Support(){
                     }
                 </ButtonGroup>
             </div>
+            <p>Page 3/5</p>
         </>
     )
 }

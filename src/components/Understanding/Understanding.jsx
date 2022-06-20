@@ -89,6 +89,7 @@ function Understanding(){
                     }
                 </ButtonGroup>
             </div>
+            <p>Page 2/5</p>
         </>
     )
 }

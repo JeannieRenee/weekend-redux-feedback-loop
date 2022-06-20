@@ -56,11 +56,12 @@ function Review() {
       <p>Comments: {comments}</p>
       
       <div className='buttons'>
-                <ButtonGroup variant="text" aria-label="text button group">
-                    <Button onClick={handleBack}>BACK</Button>
-                    <Button onClick={handleSubmit}>SUBMIT</Button>
-                </ButtonGroup>
-            </div>
+        <ButtonGroup variant="text" aria-label="text button group">
+            <Button onClick={handleBack}>BACK</Button>
+            <Button onClick={handleSubmit}>SUBMIT</Button>
+        </ButtonGroup>
+      </div>
+      <p>Page 5/5</p>
     </>
   );
 }

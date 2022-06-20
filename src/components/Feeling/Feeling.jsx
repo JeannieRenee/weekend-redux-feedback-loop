@@ -78,6 +78,7 @@ function Feeling(){
                 <Button disabled variant="text" >NEXT</Button>
                 }
             </div>
+            <p>Page 1/5</p>
         </>  
     )
 }
