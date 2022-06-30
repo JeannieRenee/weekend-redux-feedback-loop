@@ -10,7 +10,7 @@ The user will select how they feel and move to the next page. The user's data is
 
 ## Demo
 
-![Alt Text](feedback.gif)
+![Alt Text](feeedback.gif)
 
 ## Built With
 
